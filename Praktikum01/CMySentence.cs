@@ -12,6 +12,7 @@ namespace Praktikum01
             get { return myWords; }
             set { myWords = value; }
         }
+        // constructs a sentence with individual word objects by splittig a string
         public CMySentence(string s)
         {
             var myStrings = s.Split(' ');
@@ -22,6 +23,7 @@ namespace Praktikum01
                 myWords[i] = new CMyWord(myStrings[i]);
             }
         }
+        // relayes external indexing to internal array
         public CMyWord this[int index] => myWords[index];
         public static explicit operator int(CMySentence s) => s.MyWords.Length;
     }
