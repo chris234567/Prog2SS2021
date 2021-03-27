@@ -1,12 +1,17 @@
 ﻿using System;
 
-namespace Praktikum01
+namespace Uebung02
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // a)
+
+            // b)
+
+            // c)
+
         }
     }
 }
