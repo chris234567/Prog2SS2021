@@ -24,10 +24,8 @@ namespace Praktikum01
             {
                 str += s.MyWords[i].Zeichenkette;
 
-                if (i != s.MyWords.Length)
-                {
+                if (i < s.MyWords.Length - 1)
                     str += " ";
-                }
             }
             Zeichenkette = str;
         }
@@ -36,7 +34,7 @@ namespace Praktikum01
         #endregion
         public override string ToString() => Zeichenkette;
         #region binary operators
-        public static string operator +(CMyWord c1, CMyWord c2) => c1.Zeichenkette + c2.Zeichenkette;
+        public static string operator +(CMyWord c1, CMyWord c2) => c1.Zeichenkette + " " + c2.Zeichenkette;
         public static CMyWord operator +(string s, CMyWord c) => new CMyWord(s += c.Zeichenkette);
         public static CMyWord operator +(CMyWord c, string s) => new CMyWord(c.Zeichenkette += s);
         public static string operator -(CMyWord word1, CMyWord word2) => word1.Zeichenkette.Replace(word2.Zeichenkette, "");
@@ -46,8 +44,12 @@ namespace Praktikum01
             var str = "";
 
             for (int r = 0; r < i; r++)
+            {
                 str += c.Zeichenkette;
 
+                if (r < i - 1)
+                    str += " ";
+            }
             c.Zeichenkette = str;
             return c;
         }
