@@ -8,10 +8,17 @@ namespace Uebung02
         {
             // a)
 
+            // ...hier sollte die Funktionalitaet der Klasse geprueft werden...
+
             // b)
+
+            // ...hier sollte die Funktionalitaet der Klasse geprueft werden...
 
             // c)
 
+            // ...hier sollte die Funktionalitaet der Klasse geprueft werden...
+
+            _10FastFingers.Game();
         }
     }
 }
