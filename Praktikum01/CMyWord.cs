@@ -53,8 +53,8 @@ namespace Praktikum01
             c.Zeichenkette = str;
             return c;
         }
-        public static bool operator ==(CMyWord a, CMyWord b) => true ? a.Zeichenkette == b.Zeichenkette : false;
-        public static bool operator !=(CMyWord a, CMyWord b) => true ? a.Zeichenkette != b.Zeichenkette : false;
+        public static bool operator ==(CMyWord a, CMyWord b) => a.Zeichenkette == b.Zeichenkette;
+        public static bool operator !=(CMyWord a, CMyWord b) => a.Zeichenkette != b.Zeichenkette;
         #endregion
         #region unary operators
         public static string operator !(CMyWord word) => " nicht " + word.Zeichenkette;
