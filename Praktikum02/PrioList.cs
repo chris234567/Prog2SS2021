@@ -40,9 +40,14 @@ namespace Praktikum02
         Element First { get; set; } // Head of list
         public void Insert(string task, Priority prio = Priority.normal)
         {
-            if (First == null)
+            if (First == null || (int)prio == 0)
             {
+                var temp = First;
                 First = new Element { Task = task, Priority = prio };
+
+                if ((int) prio == 0)
+                    First.Successor = temp;
+
                 return; // early return, falls du's noch nicht kennst (http://www.itamarweiss.com/personal/2018/02/28/return-early-pattern.html)
             }
 
