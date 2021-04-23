@@ -11,6 +11,9 @@ namespace Praktikum02
             public string Task { get; set; }
             public Priority Priority { get; set; }
             public Element Successor { get; set; }
+            /// <summary>
+            /// Goes through elements of priority list recursively and inserts a new element in a to its priority corresponding position.
+            /// </summary>
             public void Add(string task, Priority prio)
             {
                 if ((int)Priority > (int)prio)
@@ -29,15 +32,21 @@ namespace Praktikum02
                 
                 else Successor.Add(task, prio); // recursive call advances through elements of list
             }
-            public void Print()
+            /// <summary>
+            /// Goes through elements of priority list recursively and prints the current element and its task to the console.
+            /// </summary>
+            public void PrintElement()
             {
                 Console.WriteLine(this);
                 if (Successor == null) return; // no more elements to print
-                Successor.Print();
+                Successor.PrintElement();
             }
             public override string ToString() => $"{Priority,6}: {Task}";
         }
         Element First { get; set; } // Head of list
+        /// <summary>
+        /// Adds a new element with a specific task given as a parameter to the priority list.
+        /// </summary>
         public void Insert(string task, Priority prio = Priority.normal)
         {
             if (First == null || (int)prio == 0)
@@ -53,6 +62,9 @@ namespace Praktikum02
 
             First.Add(task, prio);
         }
+        /// <summary>
+        /// Removes top element of priority list and prints its task to the console.
+        /// </summary>
         public void NextTask()
         {
             if (First == null) return; // is the list empty
@@ -61,11 +73,12 @@ namespace Praktikum02
 
             if (First.Successor != null) // List.Length > 1
                 First = First.Successor;
+
             else First = null; // only one element -> list now empty
         }
-        public void Print()
+        public void PrintNetwork()
         {
-            if (First != null) First.Print();
+            if (First != null) First.PrintElement();
         }
     }
 }

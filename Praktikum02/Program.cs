@@ -25,7 +25,7 @@ namespace Praktikum02
             // pl.NextTask();
             // pl.NextTask();
 
-            pl.Print();
+            pl.PrintNetwork();
         }
     }
 }
