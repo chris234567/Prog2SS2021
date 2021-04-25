@@ -38,8 +38,7 @@ namespace Praktikum02
             public void PrintElement()
             {
                 Console.WriteLine(this);
-                if (Successor == null) return; // no more elements to print
-                Successor.PrintElement();
+                if (Successor != null) Successor.PrintElement(); 
             }
             public override string ToString() => $"{Priority,6}: {Task}";
         }
