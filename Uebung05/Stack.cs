@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Uebung05
 {
@@ -17,10 +15,7 @@ namespace Uebung05
             newValues[^1] = value;
             Values =  newValues;
         }
-        public T Pop()
-        {
-            return Peek(true);
-        }
+        public T Pop() => Peek(true);
         public T Peek(bool b = false)
         {
             var value = Values[^1];
