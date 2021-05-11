@@ -12,6 +12,7 @@
         public Item(double price)
         {
             ID = Count++;
+            Price = price;
         }
         public virtual string ToString()
         {

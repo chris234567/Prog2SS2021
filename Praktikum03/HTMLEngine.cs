@@ -13,14 +13,12 @@
                 ITagged myTaggedObject = obj as ITagged;
                 INested myNestedObject = obj as INested;
 
-                if (myNestedObject is null || myTaggedObject is null) // obj is of raw information type - not html element. no further recursion possible -> add & continue
+                if (myNestedObject is null || myTaggedObject is null) // obj is of raw information type (or non nested decorator). no further recursion possible -> add & continue
                 {
                     doc += obj;
                     continue;
                 }
-                doc += "\n" + myTaggedObject.TagId;
-                doc += myNestedObject is null ? "" : Generate(myNestedObject.Elements); // use of ternary operator to "skip" not nested html elements // Recursive function call for nested elements
-                doc += "\n" + myTaggedObject.TagId[..1] + "/" + myTaggedObject.TagId[1..]; // add forward slash for "closing html elements"
+                doc += $"\n{myTaggedObject.TagId}" + Generate(myNestedObject.Elements) + $"\n{myTaggedObject.TagId[..1]}/{myTaggedObject.TagId[1..]}";// Recursive function call for nested elements
             }
             return doc;
         }
