@@ -68,5 +68,6 @@
     public class LineBreak : ITagged
     {
         public string TagId { get { return "<br/>"; } }
+        public override string ToString() { return TagId; }
     }
 }

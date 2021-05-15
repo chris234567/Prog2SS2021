@@ -70,6 +70,11 @@ class Program
 
         System.IO.File.WriteAllText("Example.html", html);
 
-        System.Diagnostics.Process.Start("Example.html");
+        // System.Diagnostics.Process.Start("Example.html");
+
+        new System.Diagnostics.Process
+        {
+            StartInfo = new System.Diagnostics.ProcessStartInfo("Example.html") { UseShellExecute = true }
+        }.Start();
     }
 }
