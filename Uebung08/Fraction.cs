@@ -2,7 +2,7 @@
 
 namespace Uebung08
 {
-    class Fraction : IComparable
+    class Fraction :IComparable
     {
         public int den;
         public int num;
@@ -18,10 +18,6 @@ namespace Uebung08
         public override string ToString()
         {
             return $"{den} / {num}";
-        }
-        public override Fraction[] Sort(Fraction[] arr)
-        {
-            return new Fraction[10];
         }
     }
 }
