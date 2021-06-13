@@ -5,10 +5,12 @@
         public string Name { get; private set; }
         public string PassID { get; private set; }
         public string Adress { get; private set; }
-        public VaccinationQueue<Person, VacCat>.VaccAssigner Next { get; set; }
-        public override string ToString()
+        public Person(string name, string passID, string adress)
         {
-            return base.ToString();
+            Name = name;
+            PassID = passID;
+            Adress = adress;
         }
+        public override string ToString() => $"Name: {Name}, PassID: {PassID}, Adress: {Adress}";
     }
 }
