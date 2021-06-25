@@ -27,7 +27,7 @@ namespace ProbeKlausurWS2020
             }
             else if (head.next is null)
             {
-                if (passengerCat.CompareTo(head.next.passengerCat) < 0)
+                if (passengerCat.CompareTo(head.next.passengerCat) > 0)
                 {
                     head = new Node 
                     { 
@@ -39,7 +39,7 @@ namespace ProbeKlausurWS2020
             }
             for (Node curr = head; curr.next != null; curr = curr.next)
             {
-                if (passengerCat.CompareTo(curr.next.passengerCat) < 0)
+                if (passengerCat.CompareTo(curr.next.passengerCat) > 0)
                 {
                     curr.next = new Node
                     {
