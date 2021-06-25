@@ -22,10 +22,7 @@ namespace ProbeKlausurWS2020
         private Element tail = null;
         //... hier ihr code
 
-        public static AnimalList operator + (AnimalList aL, Animal a)
-        {
-            return new AnimalList { head = new Element(a, null, aL.head) };
-        }
+        public static AnimalList operator + (AnimalList aL, Animal a) => new AnimalList { head = new Element(a, null, aL.head) };
         public static AnimalList operator * (AnimalList aL, int n)
         {
             for (Element curr = aL.head; curr != null; curr = curr.next)

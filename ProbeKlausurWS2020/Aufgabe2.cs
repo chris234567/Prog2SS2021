@@ -9,7 +9,7 @@ namespace ProbeKlausurWS2020
         BusinessClass,
         EconomyClass
     }
-    class AirportQueue<T1,T2> where T2 : IComparable, IEnumerable
+    class AirportQueue<T1,T2> : IEnumerable where T2 : IComparable
     {
         public class Node
         {

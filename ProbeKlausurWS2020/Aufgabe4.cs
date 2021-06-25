@@ -16,8 +16,8 @@ namespace ProbeKlausurWS2020
     class Server
     {
         public List<(string, string, Func<Message, bool>)> filter = new List<(string, string, Func<Message, bool>)>();
-
         public List<Message> messages = new List<Message>();
+
         public delegate void MessageDelegate(Message m);
         public delegate void SystemDelegate(string text);
 
@@ -30,12 +30,12 @@ namespace ProbeKlausurWS2020
             {
                 if (triple.Item3(m))
                 {
-                    SystemLogger(triple.Item1 + " " + triple.Item2);
+                    SystemLogger("Nachricht von: " + triple.Item1 + ". Abgelehnt weil: " + triple.Item2);
                     return;
                 }
             }
-            MessageLogger(m);
             messages.Add(m);
+            MessageLogger(m);
         }
         public void RegisterReject(string name, string cause, Func<Message, bool> f) => filter.Add((name, cause, f));
         public void Print(Func<Message, bool> f)

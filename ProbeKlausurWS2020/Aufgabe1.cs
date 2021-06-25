@@ -74,21 +74,19 @@ namespace ProbeKlausurWS2020
     {
         private List<Vehicle> vehicleFleet;
         public void AddLandVehicle(Vehicle v) 
-        { 
+        {
             if (v is LandVehicle)
             {
                 vehicleFleet.Add(v);  // (v as LandVehicle) ??
+                return;
             }
-            else
-            {
-                throw new System.ArgumentException("Not a land vehicle!");
-            }
+            throw new System.ArgumentException("Not a land vehicle!");
         }
         public void PrintVehicleInfo()
         {
             foreach (var vehicle in vehicleFleet)
             {
-                System.Console.WriteLine(vehicle);
+                Console.WriteLine(vehicle.GetInfo());
             }
         }
     }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ProbeKlausurWS2020
 {
@@ -16,13 +15,13 @@ namespace ProbeKlausurWS2020
             server.Store(new Message("Hallo Venus", "test"));
             server.Store(new Message("Hallo Merkur", "test"));
 
-            server.RegisterReject("admin", "kein Marsianer", (Message m) => true ? m.Text.Contains("Mars") : false);
+            server.RegisterReject("admin", "kein Marsianer", (Message m) => m.Text.Contains("Mars"));
 
             server.Store(new Message("Hallo Mars", "test"));
 
             server.Print((Message m) => true);
-            server.Print((Message m) => true ? m.Text.Length > 10 : false);
-            server.Print((Message m) => true ? m.User == "test" : false);
+            server.Print((Message m) => m.Text.Length > 10);
+            server.Print((Message m) => m.User == "test");
         }
     }
 }
